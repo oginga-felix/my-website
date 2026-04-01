@@ -1,32 +1,11 @@
-function toggleInfo(){
-  var info=document.getElementById('info');
-  if (ifo.style.display ==="none"){
-    ifo.style.display ==="block";
-  }
-  else
-  {
-    ifo.style.display ==="none";  
-  }
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "description": "A simple website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1"
+  },
+  "author": "oginga-felix",
+  "license": "ISC"
 }
-const loginForm = document.getElementById('login-form');
-
-loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Stop the default form submission
-
-    const response = await fetch('/api/login', {
-        method: 'POST',
-        body: new FormData(loginForm)
-        // ... include headers and body data
-    });
-
-    if (response.ok) {
-        // Successful login! Now, redirect the user using JavaScript
-        window.location.href = '/dashboard';
-        // OR, if you are using a frontend framework (like React Router):
-        // history.push('/dashboard');
-    } else {
-        // Handle login failure (e.g., show an error message)
-        const errorData = await response.json();
-        alert(errorData.message);
-    }
-});
